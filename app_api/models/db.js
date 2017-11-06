@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost/userAccounts';
+var dbURI = 'mongodb://localhost/project3';
 if (process.env.NODE_ENV === 'production') {
   dbURI = process.env.MONGOLAB_URI;
 }
@@ -37,4 +37,4 @@ process.on('SIGINT', function() {
 
 
 // BRING IN YOUR SCHEMAS & MODELS
-require('./users');
+require('./properties');

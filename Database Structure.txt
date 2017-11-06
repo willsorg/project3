@@ -1,0 +1,15 @@
+DB Name: project3
+Collection: properties{
+	
+	Address - required
+	Type- required  // ie apartment  or house
+	Rent - required
+	Owner - required	
+	OwnerPhone
+	OwnerWeb
+	images[]
+}
+
+	
+	
+
