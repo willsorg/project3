@@ -8,6 +8,44 @@ var sendJSONresponse = function(res, status, content){
   res.json(content);
 };
 
+module.exports.postProperty = function(req, res) {
+  
+  var property = new Property();
+  
+  
+
+  property.address = req.body.address;
+  property.type = req.body.email;
+  property.rent = req.body.rent;
+  property.owner = req.body.owner;
+  property.bedroom = req.body.bedroom;
+  property.bathroom = req.body.bathroom;
+  property.tenant = req.body.tenant;
+  //property.
+ 
+  
+  
+  property.save(function(err) {
+    
+    if (err) {
+      console.log("Property Not written, error");
+      console.log(err);
+      
+    }
+    else{
+    var token;
+    token = user.generateJwt();
+    res.status(200);
+    res.json({
+      "token" : token
+    });
+    }
+    
+  });
+  
+};
+
+
 module.exports.propertyByType = function(req, res){
 
   if (req.body.type != null) { // Check if session exists
